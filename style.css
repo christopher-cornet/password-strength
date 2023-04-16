@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(61, 61, 61);
+}
+
+/* Container of the password security */
+.password-security {
+    padding: 10vh 5vw;
+    margin: 10vh 25vw 0 25vw;
+    text-align: center;
+    background-color: rgb(44, 160, 255);
+}
+
+h1 {
+    margin-bottom: 5vh;
+    color: #fff;
+}
+
+/* Div containing the password and the checkbox */
+.input-pwd-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-pwd-checkbox p {
+    margin-right: 10px;
+}
+
+.password {
+    margin-right: 1vw;
+}
+.checkbox {
+    height: 16px;
+    width: 16px;
+}
+
+/* Security level is the sentence which describe to the user the level of security of his password */
+.security-level {
+    color: #fff;
+    margin-top: 5vh;
+}
