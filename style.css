@@ -57,3 +57,7 @@ p {
     color: #fdfcfe;
     margin-top: 5vh;
 }
+
+.weak {
+    border: 1px solid red;
+}

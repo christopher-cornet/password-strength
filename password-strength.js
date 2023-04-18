@@ -1,27 +1,54 @@
 /* Show password when checkbox is clicked */
 function show_password() {
     var password = document.getElementById("user-password");
+    let i = 0;
     if (password.type === "password") {
         password.type = "text";
     }
     else {
         password.type = "password";
     }
-    if (password.value.length <= 10) {
-        console.log("pas fou") 
-    }
 }
 
 /* Level of security of the password */
-function security() {
+function Security() {
+    var password = document.getElementById("user-password").value;
     let i = 0;
-    let text = document.getElementsByClassName("security-level")
-    if (password.length <= 10) {
-        text.textContent = "Mauvais";
+    /*let text = document.getElementsByClassName("security-level")*/
+    if (password.length > 8) {
+        i++;
     }
+    if (password.length >= 10) {
+        i++;
+    }
+    if (/[A-Z]/.test(password)) {
+        i++;
+    }
+    if (/[0-9]/.test(password)) {
+        i++;
+    }
+    if (/[A-Za-z0-8]/.test(password)) {
+        i++;
+    }
+    return i;
 }
 
-var password = document.getElementById("user-password");
-if (password.value.length > 2) {
-    console.log("pas fou") 
-}
+let container = document.querySelector('.input-pwd-checkbox');
+document.addEventListener("keyup", function(e) {
+    let password = document.getElementById("user-password").value;
+
+    let security = security(password)
+    if (strength <= 2) {
+        container.classList.add('weak');
+        container.classList.remove('medium');
+        container.classList.remove('strong');
+    } else if (strength >= 2 && strength <= 4) {
+        container.classList.remove('weak');
+        container.classList.add('medium');
+        container.classList.remove('strong');
+    } else {
+        container.classList.remove('weak');
+        container.classList.remove('medium');
+        container.classList.add('strong');
+    }
+})
