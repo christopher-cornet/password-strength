@@ -33,22 +33,43 @@ function Security() {
     return i;
 }
 
-let container = document.querySelector('.password-security');
+let password_security = document.querySelector('.password-security');
+let security_level = document.querySelector('.security-level');
+let h1 = document.querySelector('h1');
+
 document.addEventListener("keyup", function(e) {
     let password = document.getElementById("user-password").value;
-
     let security = Security(password)
+
     if (security <= 2) {
-        container.classList.add('weak');
-        container.classList.remove('medium');
-        container.classList.remove('strong');
+        password_security.classList.add('weak');
+        password_security.classList.remove('medium');
+        password_security.classList.remove('strong');
+        security_level.classList.add('weak-pwd')
+        security_level.classList.remove('medium-pwd')
+        security_level.classList.remove('strong-pwd')
+        h1.classList.add('h1-weak-pwd')
+        h1.classList.remove('h1-medium-pwd')
+        h1.classList.remove('h1-strong-pwd')
     } else if (security >= 2 && security <= 4) {
-        container.classList.remove('weak');
-        container.classList.add('medium');
-        container.classList.remove('strong');
+        password_security.classList.remove('weak');
+        password_security.classList.add('medium');
+        password_security.classList.remove('strong');
+        security_level.classList.remove('weak-pwd')
+        security_level.classList.add('medium-pwd')
+        security_level.classList.remove('strong-pwd')
+        h1.classList.remove('h1-weak-pwd')
+        h1.classList.add('h1-medium-pwd')
+        h1.classList.remove('h1-strong-pwd')
     } else {
-        container.classList.remove('weak');
-        container.classList.remove('medium');
-        container.classList.add('strong');
+        password_security.classList.remove('weak');
+        password_security.classList.remove('medium');
+        password_security.classList.add('strong');
+        security_level.classList.remove('weak-pwd')
+        security_level.classList.remove('medium-pwd')
+        security_level.classList.add('strong-pwd')
+        h1.classList.remove('h1-weak-pwd')
+        h1.classList.remove('h1-medium-pwd')
+        h1.classList.add('h1-strong-pwd')
     }
 })

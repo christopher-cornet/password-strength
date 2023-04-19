@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s ease;
 }
 
 body {
@@ -58,8 +59,34 @@ p {
     margin-top: 5vh;
 }
 
-button {
-    margin-top: 3vh;
+.security-level.weak-pwd::after {
+    content: 'Insecure password';
+    color: red;
+}
+
+.security-level.medium-pwd::after {
+    content: 'Average password';
+    color: orange;
+}
+
+.security-level.strong-pwd::after {
+    content: 'Secure password';
+    color: rgb(0, 218, 0);
+}
+
+h1.h1-weak-pwd::after {
+    content: 'Is this password secured enough for you?';
+    color: red;
+}
+
+h1.h1-medium-pwd::after {
+    content: "I'm sure you can do it !";
+    color: orange;
+}
+
+h1.h1-strong-pwd::after {
+    content: 'You see ? You can do it !';
+    color: rgb(0, 218, 0);
 }
 
 /* Security level colors */
@@ -72,5 +99,5 @@ button {
 }
 
 .strong {
-    border: 2px solid green;
+    border: 2px solid rgb(0, 218, 0);
 }
