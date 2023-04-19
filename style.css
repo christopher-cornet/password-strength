@@ -58,6 +58,19 @@ p {
     margin-top: 5vh;
 }
 
+button {
+    margin-top: 3vh;
+}
+
+/* Security level colors */
 .weak {
-    border: 1px solid red;
+    border: 2px solid red;
+}
+
+.medium {
+    border: 2px solid orange;
+}
+
+.strong {
+    border: 2px solid green;
 }

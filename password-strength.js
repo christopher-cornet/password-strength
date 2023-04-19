@@ -33,16 +33,16 @@ function Security() {
     return i;
 }
 
-let container = document.querySelector('.input-pwd-checkbox');
+let container = document.querySelector('.password-security');
 document.addEventListener("keyup", function(e) {
     let password = document.getElementById("user-password").value;
 
-    let security = security(password)
-    if (strength <= 2) {
+    let security = Security(password)
+    if (security <= 2) {
         container.classList.add('weak');
         container.classList.remove('medium');
         container.classList.remove('strong');
-    } else if (strength >= 2 && strength <= 4) {
+    } else if (security >= 2 && security <= 4) {
         container.classList.remove('weak');
         container.classList.add('medium');
         container.classList.remove('strong');
